@@ -20,7 +20,7 @@ public class TestBase
         this.indexPage = new IndexPage(this.driver.getDriver(), url);
     }
 
-    @AfterSuite
+    //@AfterSuite
     public void afterSuite()
     {
         this.indexPage.dispose();

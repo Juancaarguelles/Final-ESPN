@@ -10,7 +10,7 @@
 
     <test name="First Test">
         <classes>
-            <class name="FirstTest"></class>
+            <class name="LoginTest"></class>
         </classes>
     </test>
     <!--<test name="espn test logout">
