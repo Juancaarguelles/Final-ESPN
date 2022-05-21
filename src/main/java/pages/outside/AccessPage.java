@@ -38,4 +38,12 @@ public class AccessPage extends BasePage
     {
         return this.espnLogo.getAttribute("role");
     }
+
+    public SignUpPage goToSignUp()
+    {
+        this.waitUntilVisibility(signUpButton);
+        this.signUpButton.click();
+        return new SignUpPage(this.getDriver());
+    }
+
 }

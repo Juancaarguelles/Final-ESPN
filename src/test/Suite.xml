@@ -10,17 +10,8 @@
 
     <test name="First Test">
         <classes>
-            <class name="LoginTest"></class>
+            <class name="SignUpTest"></class>
         </classes>
     </test>
-    <!--<test name="espn test logout">
-        <classes>
-            <class name="TestLogOut"></class>
-        </classes>
-    </test>
-    <test name="espn test delete Account">
-        <classes>
-            <class name="TestDeleteProfile"></class>
-        </classes>
-    </test>-->
+
 </suite>
