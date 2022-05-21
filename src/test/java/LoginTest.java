@@ -1,15 +1,21 @@
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.outside.AccessPage;
 
 public class LoginTest extends TestBase
 {
     private AccessPage accessPage;
-    @Test(description = "Find and asserts that logo exists", priority = 0)
-    public void findESPNLogo()
+
+    @BeforeClass
+    public void redirectTo()
     {
         this.indexPage.goToOptions();
         this.accessPage = this.indexPage.goToAccess();
+    }
+    @Test(description = "Find and asserts that logo exists", priority = 0)
+    public void findESPNLogo()
+    {
         Assert.assertEquals(accessPage.getLogoText(),"Disney account");
         Assert.assertEquals(accessPage.getLogoAttribute(), "img");
     }
