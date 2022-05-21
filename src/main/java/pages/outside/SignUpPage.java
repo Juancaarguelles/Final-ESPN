@@ -30,6 +30,24 @@ public class SignUpPage extends BasePage
     {
         return this.signUpTitle.getText();
     }
+
+    public void fillForm(String name, String lastName, String email, String password)
+    {
+        this.waitUntilVisibility(this.nameInput);
+        this.nameInput.click();
+        this.nameInput.sendKeys(name);
+
+        this.lastNameInput.click();
+        this.lastNameInput.sendKeys(lastName);
+
+        this.emailInput.click();
+        this.emailInput.sendKeys(email);
+
+        this.passwordInput.click();
+        this.passwordInput.sendKeys(password);
+
+        this.signUpButton.click();
+    }
     public String getFirstNameText()
     {
         return this.nameInput.getAttribute("placeholder");
