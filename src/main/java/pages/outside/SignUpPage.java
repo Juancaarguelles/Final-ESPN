@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import pages.inside.WelcomeUserPage;
 
 public class SignUpPage extends BasePage
 {
@@ -31,7 +32,7 @@ public class SignUpPage extends BasePage
         return this.signUpTitle.getText();
     }
 
-    public void fillForm(String name, String lastName, String email, String password)
+    public WelcomeUserPage goToWelcomeUserPage(String name, String lastName, String email, String password)
     {
         this.waitUntilVisibility(this.nameInput);
         this.nameInput.click();
@@ -46,7 +47,10 @@ public class SignUpPage extends BasePage
         this.passwordInput.click();
         this.passwordInput.sendKeys(password);
 
+        this.waitUntilBeClickeable(this.signUpButton);
         this.signUpButton.click();
+
+        return new WelcomeUserPage(this.getDriver());
     }
     public String getFirstNameText()
     {
