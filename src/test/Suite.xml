@@ -8,7 +8,19 @@
     <parameter name="url" value="https://www.espnqa.com/?src=com&amp;_adblock=true&amp;espn=cloud"></parameter>
 
 
-    <test name="First Test">
+    <test name="Login Test">
+        <classes>
+            <class name="LoginTest"></class>
+        </classes>
+    </test>
+
+    <test name="Sign up Test">
+        <classes>
+            <class name="SignUpTest"></class>
+        </classes>
+    </test>
+
+    <test name="General interaction Test">
         <classes>
             <class name="GeneralInteractionTest"></class>
         </classes>

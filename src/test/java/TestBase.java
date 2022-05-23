@@ -1,6 +1,4 @@
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.testng.log4testng.Logger;
 import pages.outside.IndexPage;
 import utils.driver.Driver;
@@ -11,17 +9,17 @@ public class TestBase
     protected IndexPage indexPage;
     protected Logger log;
 
-    @BeforeSuite
+    @BeforeTest
     @Parameters({"chrome-browser","url"})
-    public void beforeSuite(String browser, String url)
+    public void beforeTest(String browser, String url)
     {
         this.driver = new Driver(browser);
         this.driver.getDriver().manage().window().maximize();
         this.indexPage = new IndexPage(this.driver.getDriver(), url);
     }
 
-    //@AfterSuite
-    public void afterSuite()
+    @AfterTest
+    public void afterTest()
     {
         this.indexPage.dispose();
     }
