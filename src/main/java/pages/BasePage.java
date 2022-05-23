@@ -42,4 +42,9 @@ public class BasePage
     {
         this.wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
+
+    public boolean elementExists(WebElement webElement)
+    {
+        return  webElement != null;
+    }
 }

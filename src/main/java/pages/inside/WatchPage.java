@@ -29,4 +29,14 @@ public class WatchPage extends BasePage
     {
         return this.carousel.findElement(By.cssSelector(".Carousel__Inner > li:nth-child(2) .WatchTile__Meta")).getText();
     }
+
+    public SingleCardPage goToSingleCardPage()
+    {
+        WebElement openButton = this.carousel.findElement(By.cssSelector(".Carousel__Inner > li:nth-child(2) > a"));
+
+        waitUntilBeClickeable(openButton);
+        openButton.click();
+
+        return new SingleCardPage(this.getDriver());
+    }
 }
