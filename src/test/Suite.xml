@@ -13,17 +13,14 @@
             <class name="LoginTest"></class>
         </classes>
     </test>
-
     <test name="Sign up Test">
         <classes>
             <class name="SignUpTest"></class>
         </classes>
     </test>
-
     <test name="General interaction Test">
         <classes>
             <class name="GeneralInteractionTest"></class>
         </classes>
     </test>
-
 </suite>
