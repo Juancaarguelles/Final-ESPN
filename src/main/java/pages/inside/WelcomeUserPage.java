@@ -48,6 +48,7 @@ public class WelcomeUserPage extends BasePage
         this.waitUntilVisibility(this.logoutButton);
         this.logoutButton.click();
 
+        this.getDriver().navigate().refresh();
         return new IndexPage(this.getDriver());
     }
 }

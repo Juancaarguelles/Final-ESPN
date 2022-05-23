@@ -40,4 +40,10 @@ public class IndexPage extends BasePage
         return new AccessPage(this.getDriver());
     }
 
+    public String getWelcomeLabel()
+    {
+        this.waitUntilVisibility(this.welcomeLabel);
+        return this.welcomeLabel.getText();
+    }
+
 }

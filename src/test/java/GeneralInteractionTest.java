@@ -64,9 +64,12 @@ public class GeneralInteractionTest extends TestBase
         Assert.assertFalse(this.welcomeUserPage.getWelcomeLabel().equals("Welcome!"), "Not signed up");
     }
 
-    @Test(description = "Log out from the current account", priority = 5)
+    @Test(description = "Log out from the current account and check welcome label", priority = 5)
     public void logOutFromAccount()
     {
         this.indexPage = this.welcomeUserPage.logout();
+        this.indexPage.goToOptions();
+        Assert.assertTrue(this.indexPage.getWelcomeLabel().equals("Welcome!"), "Not loged out");
+
     }
 }
