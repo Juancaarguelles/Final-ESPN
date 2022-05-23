@@ -55,4 +55,18 @@ public class GeneralInteractionTest extends TestBase
         this.watchPage = this.singleCardPage.clickCloseButton();
         Assert.assertEquals(watchPage.getCarouselRole(), "listbox", "There is no carousel here");
     }
+
+    @Test(description = "Go backwards landing page and validate the username is present", priority =  4)
+    public void goBackToLandingPageAndValidateUserName()
+    {
+        this.welcomeUserPage = this.watchPage.goToWelcomeUserPage();
+        this.welcomeUserPage.goToOptions();
+        Assert.assertFalse(this.welcomeUserPage.getWelcomeLabel().equals("Welcome!"), "Not signed up");
+    }
+
+    @Test(description = "Log out from the current account", priority = 5)
+    public void logOutFromAccount()
+    {
+        this.indexPage = this.welcomeUserPage.logout();
+    }
 }

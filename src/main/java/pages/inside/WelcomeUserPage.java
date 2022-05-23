@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import pages.outside.IndexPage;
 
 public class WelcomeUserPage extends BasePage
 {
@@ -16,6 +17,10 @@ public class WelcomeUserPage extends BasePage
     private WebElement watchButton;
     @FindBy(css = ".global-user-container .account-management .display-user")
     private WebElement welcomeLabel;
+
+    @FindBy(css = ".global-user-container .account-management  li:nth-child(9) > a")
+    private WebElement logoutButton;
+
     public WelcomeUserPage(WebDriver driver) {
         super(driver);
     }
@@ -36,5 +41,13 @@ public class WelcomeUserPage extends BasePage
         this.watchButton.click();
 
         return new WatchPage(this.getDriver());
+    }
+
+    public  IndexPage logout()
+    {
+        this.waitUntilVisibility(this.logoutButton);
+        this.logoutButton.click();
+
+        return new IndexPage(this.getDriver());
     }
 }

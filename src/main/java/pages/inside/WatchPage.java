@@ -39,4 +39,10 @@ public class WatchPage extends BasePage
 
         return new SingleCardPage(this.getDriver());
     }
+
+    public WelcomeUserPage goToWelcomeUserPage()
+    {
+        this.getDriver().navigate().back();
+        return new WelcomeUserPage(this.getDriver());
+    }
 }

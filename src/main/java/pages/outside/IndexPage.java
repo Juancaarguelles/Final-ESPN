@@ -21,6 +21,11 @@ public class IndexPage extends BasePage
         this.getDriver().get(url);
     }
 
+    public IndexPage(WebDriver driver)
+    {
+        super(driver);
+    }
+
     public void goToOptions()
     {
         this.waitUntilVisibility(accessButton);
